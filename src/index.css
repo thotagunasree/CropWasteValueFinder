@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=Yantramanav:wght@400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: #faf7f2;
+    color: #1e293b;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom Agricultural Styled Elements */
+.agri-gradient-hero {
+  background: linear-gradient(135deg, #0f291e 0%, #1b4332 40%, #2d6a4f 80%, #40916c 100%);
+}
+
+.agri-gradient-card {
+  background: linear-gradient(180deg, #ffffff 0%, #fdfbf7 100%);
+}
+
+.agri-glass {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(237, 227, 205, 0.7);
+}
+
+.agri-glass-dark {
+  background: rgba(15, 35, 26, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(64, 145, 108, 0.3);
+}
+
+.agri-glass-header {
+  background: rgba(253, 251, 247, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.agri-badge-green {
+  background-color: #dcfce7;
+  color: #14532d;
+  border: 1px solid #86efac;
+}
+
+.agri-badge-amber {
+  background-color: #fef3c7;
+  color: #78350f;
+  border: 1px solid #fde68a;
+}
+
+.agri-badge-blue {
+  background-color: #dbeafe;
+  color: #1e40af;
+  border: 1px solid #93c5fd;
+}
+
+/* Custom Smooth Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f5efe1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbb692;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9b6441;
+}
+
+/* Shimmer Scanning Animation */
+@keyframes scanningBeam {
+  0% {
+    top: 0%;
+    opacity: 0.9;
+  }
+  50% {
+    top: 95%;
+    opacity: 0.4;
+  }
+  100% {
+    top: 0%;
+    opacity: 0.9;
+  }
+}
+
+.scan-laser {
+  animation: scanningBeam 2.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* Print Stylesheet for Farmers */
+@media print {
+  body {
+    background-color: white !important;
+    color: black !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .card-print {
+    box-shadow: none !important;
+    border: 1px solid #ccc !important;
+    page-break-inside: avoid;
+  }
+}
